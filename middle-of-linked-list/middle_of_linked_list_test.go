@@ -9,7 +9,15 @@ func TestMiddleNode(t *testing.T) {
 		want int
 	}{
 		{
-			name: "odd list",
+			name: "single list item",
+			head: &ListNode{
+				Val: 1,
+				Next: nil,
+			},
+			want: 1,
+		},
+		{
+			name: "odd length list",
 			head: &ListNode{
 				Val: 1,
 				Next: &ListNode{
@@ -29,7 +37,7 @@ func TestMiddleNode(t *testing.T) {
 			want: 3,
 		},
 		{
-			name: "even list",
+			name: "even length list",
 			head: &ListNode{
 				Val: 1,
 				Next: &ListNode{
