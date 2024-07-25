@@ -9,7 +9,7 @@ func TestDiameterOfBinaryTree(t *testing.T) {
 		want int
 	}{
 		{
-			name: "test",
+			name: "diameter of three",
 			root: &TreeNode{
 				Val: 1,
 				Left: &TreeNode{
