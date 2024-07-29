@@ -1,7 +1,6 @@
 package insert_interval
 
 import (
-	"reflect"
 	"testing"
 )
 
@@ -30,9 +29,26 @@ func TestInsert(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			got := insert(tc.intArr, tc.newInt)
 
-			if !reflect.DeepEqual(got, tc.want) {
+			if !intArrEq(got, tc.want) {
 				t.Fatalf("got %v, want %v\n", got, tc.want)
 			}
 		})
 	}
+}
+
+func intArrEq(a, b [][]int) bool {
+	if len(a) != len(b) {
+		return false
+	}
+
+	for i := range a {
+		if len(a[i]) != 2 || len(b[i]) != 2 {
+			return false
+		}
+
+		if a[i][0] != b[i][0] || a[i][1] != b[i][1] {
+			return false
+		}
+	}
+	return true
 }
