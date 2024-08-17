@@ -1,6 +1,8 @@
 package three_sum
 
-import "sort"
+import (
+	"sort"
+)
 
 func threeSum(nums []int) [][]int {
 	n := len(nums)
@@ -20,7 +22,7 @@ func threeSum(nums []int) [][]int {
 				res = append(res, []int{nums[idx1], nums[idx2], nums[idx3]})
 				idx3--
 
-				for idx2 < idx3 && nums[idx2] == nums[idx3]+1 {
+				for idx3 > idx2 && nums[idx3] == nums[idx3+1] {
 					idx3--
 				}
 			} else if sum > 0 {

@@ -19,7 +19,7 @@ func TestThreeSum(t *testing.T) {
 			want: [][]int{},
 		},
 		"one triplet sums to 0": {
-			nums: []int{0, 0, 0},
+			nums: []int{0, 0, 0, 0},
 			want: [][]int{{0, 0, 0}},
 		},
 	}
