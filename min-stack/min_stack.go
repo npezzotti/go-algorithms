@@ -1,38 +1,28 @@
 package min_stack
 
-import "math"
-
 type MinStack struct {
 	stack []int
-	min   int
+	mins  []int
 }
 
 func Constructor() MinStack {
-	return MinStack{
-		min: math.MaxInt64,
-	}
+	return MinStack{}
 }
 
 func (this *MinStack) Push(val int) {
-	this.stack = append(this.stack, val)
-
-	if this.min > val {
-		this.min = val
+	if len(this.mins) == 0 || val <= this.GetMin() {
+		this.mins = append(this.mins, val)
 	}
+
+	this.stack = append(this.stack, val)
 }
 
 func (this *MinStack) Pop() {
-	last := this.stack[len(this.stack)-1]
-	this.stack = this.stack[:len(this.stack)-1]
-
-	if last == this.min {
-		this.min = math.MaxInt64
-		for _ ,x := range this.stack {
-			if x < this.min {
-				this.min = x
-			}
-		}
+	if this.Top() == this.GetMin() {
+		this.mins = this.mins[:len(this.mins)-1]
 	}
+
+	this.stack = this.stack[:len(this.stack)-1]
 }
 
 func (this *MinStack) Top() int {
@@ -40,7 +30,7 @@ func (this *MinStack) Top() int {
 }
 
 func (this *MinStack) GetMin() int {
-	return this.min
+	return this.mins[len(this.mins)-1]
 }
 
 /**
