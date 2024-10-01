@@ -15,12 +15,12 @@ func Constructor() TimeMap {
 	}
 }
 
-func (this *TimeMap) Set(key string, value string, timestamp int) {
-	this.timeMap[key] = append(this.timeMap[key], entry{value: value, timestamp: timestamp})
+func (tm *TimeMap) Set(key string, value string, timestamp int) {
+	tm.timeMap[key] = append(tm.timeMap[key], entry{value: value, timestamp: timestamp})
 }
 
-func (this *TimeMap) Get(key string, timestamp int) string {
-	vals, ok := this.timeMap[key]
+func (tm *TimeMap) Get(key string, timestamp int) string {
+	vals, ok := tm.timeMap[key]
 	if !ok {
 		return ""
 	}
