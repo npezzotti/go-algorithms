@@ -1,7 +1,6 @@
 package word_break
 
 import (
-	"fmt"
 	"slices"
 )
 
