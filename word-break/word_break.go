@@ -11,7 +11,6 @@ func wordBreak(s string, wordDict []string) bool {
 
 	for i := 0; i <= len(s); i++ {
 		for j := 0; j < i; j++ {
-			fmt.Println(string(s[j:i]))
 			if wordTracker[j] && slices.Contains(wordDict, string(s[j:i])) {
 				wordTracker[i] = true
 				break
