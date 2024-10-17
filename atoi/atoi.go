@@ -1,6 +1,7 @@
 package atoi
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -14,6 +15,7 @@ func myAtoi(s string) int {
 	}
 
 	if idx < n && (s[idx] == '+' || s[idx] == '-') {
+		fmt.Println("plus or minus")
 		if s[idx] == '-' {
 			negative = true
 		}
@@ -28,14 +30,14 @@ func myAtoi(s string) int {
 		}
 
 		res = res*10 + digit
-	}
 
-	if res > math.MaxInt32 && !negative {
-		return math.MaxInt32
-	}
+		if res > math.MaxInt32 && !negative {
+			return math.MaxInt32
+		}
 
-	if -res < math.MinInt32 && negative {
-		return math.MinInt32
+		if -res < math.MinInt32 && negative {
+			return math.MinInt32
+		}
 	}
 
 	if negative {
