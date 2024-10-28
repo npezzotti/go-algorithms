@@ -50,6 +50,6 @@ func rightSideViewBFS(root *TreeNode) []int {
 			}
 		}
 	}
-	
+
 	return res
 }
