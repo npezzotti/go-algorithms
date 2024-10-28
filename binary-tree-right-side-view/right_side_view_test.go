@@ -56,7 +56,7 @@ func TestRightSideView(t *testing.T) {
 	t.Run("rightSideViewDFS", func(t *testing.T) {
 		for _, tc := range tcases {
 			if output := rightSideViewDFS(tc.tree); !slices.Equal(tc.output, output) {
-				t.Fatalf("rightSideViewDFS: expected %+v, got %+v", tc.output, output)
+				t.Errorf("rightSideViewDFS: expected %+v, got %+v", tc.output, output)
 			}
 		}
 	})
@@ -64,7 +64,7 @@ func TestRightSideView(t *testing.T) {
 	t.Run("rightSideViewBFS", func(t *testing.T) {
 		for _, tc := range tcases {
 			if output := rightSideViewBFS(tc.tree); !slices.Equal(tc.output, output) {
-				t.Fatalf("rightSideViewBFS: expected %+v, got %+v", tc.output, output)
+				t.Errorf("rightSideViewBFS: expected %+v, got %+v", tc.output, output)
 			}
 		}
 	})
