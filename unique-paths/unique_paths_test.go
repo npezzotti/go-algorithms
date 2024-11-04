@@ -9,11 +9,11 @@ func TestUniquePaths(t *testing.T) {
 		m, n   int
 		result int
 	}{
-		// {
-		// 	m:      3,
-		// 	n:      7,
-		// 	result: 28,
-		// },
+		{
+			m:      3,
+			n:      7,
+			result: 28,
+		},
 		{
 			m:      3,
 			n:      2,
