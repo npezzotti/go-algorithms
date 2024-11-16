@@ -9,24 +9,24 @@ func Test_min(t *testing.T) {
 		t      string
 		output string
 	}{
-		// {
-		// 	name:   "regular string",
-		// 	s:      "ADOBECODEBANC",
-		// 	t:      "ABC",
-		// 	output: "BANC",
-		// },
-		// {
-		// 	name:   "single letter",
-		// 	s:      "a",
-		// 	t:      "a",
-		// 	output: "a",
-		// },
-		// {
-		// 	name:   "no window",
-		// 	s:      "a",
-		// 	t:      "aa",
-		// 	output: "",
-		// },
+		{
+			name:   "regular string",
+			s:      "ADOBECODEBANC",
+			t:      "ABC",
+			output: "BANC",
+		},
+		{
+			name:   "single letter",
+			s:      "a",
+			t:      "a",
+			output: "a",
+		},
+		{
+			name:   "no window",
+			s:      "a",
+			t:      "aa",
+			output: "",
+		},
 		{
 			name:   "no window",
 			s:      "bba",
