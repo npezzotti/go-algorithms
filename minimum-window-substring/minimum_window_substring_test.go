@@ -28,7 +28,7 @@ func Test_min(t *testing.T) {
 			output: "",
 		},
 		{
-			name:   "no window",
+			name:   "duplicate characters in string",
 			s:      "bba",
 			t:      "ab",
 			output: "ba",
