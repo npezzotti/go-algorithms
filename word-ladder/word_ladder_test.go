@@ -25,7 +25,7 @@ func Test_ladderLength(t *testing.T) {
 			output:    0,
 		},
 		{
-			name:      "single characters",
+			name:      "beginWord in word list",
 			beginWord: "a",
 			endWord:   "c",
 			wordList:  []string{"a", "b", "c"},
