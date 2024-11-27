@@ -2,11 +2,13 @@ package merge_two_sorted_lists
 
 import (
 	"testing"
+
+	"github.com/npezzotti/go-algorithms/utils"
 )
 
 func TestMergeTwoLists(t *testing.T) {
-	listOneHead := &ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: nil}}}
-	listTwoHead := &ListNode{Val: 1, Next: &ListNode{Val: 3, Next: &ListNode{Val: 4, Next: nil}}}
+	listOneHead := &utils.ListNode{Val: 1, Next: &utils.ListNode{Val: 2, Next: &utils.ListNode{Val: 4, Next: nil}}}
+	listTwoHead := &utils.ListNode{Val: 1, Next: &utils.ListNode{Val: 3, Next: &utils.ListNode{Val: 4, Next: nil}}}
 	merged := MergeTwoLists(listOneHead, listTwoHead)
 
 	got := listToArray(merged)
@@ -33,7 +35,7 @@ func TestMergeTwoListsBothEmpty(t *testing.T) {
 }
 
 func TestMergeTwoListsOneEmpty(t *testing.T) {
-	listOneHead := &ListNode{Val: 0, Next: nil}
+	listOneHead := &utils.ListNode{Val: 0, Next: nil}
 	merged := MergeTwoLists(listOneHead, nil)
 
 	got := listToArray(merged)
@@ -46,7 +48,7 @@ func TestMergeTwoListsOneEmpty(t *testing.T) {
 	}
 }
 
-func listToArray(head *ListNode) []int {
+func listToArray(head *utils.ListNode) []int {
 	var arr []int
 
 	for head != nil {

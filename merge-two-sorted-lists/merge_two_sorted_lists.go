@@ -1,12 +1,9 @@
 package merge_two_sorted_lists
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+import "github.com/npezzotti/go-algorithms/utils"
 
-func MergeTwoLists(list1, list2 *ListNode) *ListNode {
-	d := new(ListNode)
+func MergeTwoLists(list1, list2 *utils.ListNode) *utils.ListNode {
+	d := new(utils.ListNode)
 	cur := d
 
 	for list1 != nil && list2 != nil {
