@@ -1,7 +1,5 @@
 package missing_number
 
-import "fmt"
-
 func missingNumberHash(nums []int) int {
 	arr := make([]int, len(nums)+1)
 	for _, num := range nums {
@@ -36,7 +34,6 @@ func missingNumberBitwise(nums []int) int {
 
 	for i, num := range nums {
 		missing ^= i ^ num
-		fmt.Println(missing)
 	}
 
 	return missing
