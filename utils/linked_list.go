@@ -15,7 +15,7 @@ func IsEqual(a, b *ListNode) bool {
 		b = b.Next
 	}
 
-	if a != nil && b != nil {
+	if a != nil || b != nil {
 		return false
 	}
 
