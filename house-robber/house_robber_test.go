@@ -30,8 +30,15 @@ func Test_rob(t *testing.T) {
 	}
 
 	for _, tc := range tcases {
-		if output := rob(tc.nums); output != tc.output {
-			t.Errorf("got %d, expected %d", output, tc.output)
-		}
+		t.Run("robTopDownMemoized", func(t *testing.T) {
+			if output := robTopDownMemoized(tc.nums); output != tc.output {
+				t.Errorf("got %d, expected %d", output, tc.output)
+			}
+		})
+		t.Run("robBottomUpDP", func(t *testing.T) {
+			if output := robBottomUpDP(tc.nums); output != tc.output {
+				t.Errorf("got %d, expected %d", output, tc.output)
+			}
+		})
 	}
 }
