@@ -19,6 +19,10 @@ func Test_funcDuplicate(t *testing.T) {
 			nums:   []int{3, 3, 3, 3, 3},
 			output: 3,
 		},
+		{
+			nums:   []int{2, 5, 9, 6, 9, 3, 8, 9, 7, 1},
+			output: 9,
+		},
 	}
 
 	for _, tc := range tcases {
