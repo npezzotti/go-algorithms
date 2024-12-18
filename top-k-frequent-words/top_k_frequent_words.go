@@ -15,10 +15,10 @@ func (wh WordHeap) Len() int { return len(wh) }
 
 func (wh WordHeap) Less(i, j int) bool {
 	if wh[i].count == wh[j].count {
-		return wh[i].word < wh[j].word
+		return wh[i].word > wh[j].word
 	}
 
-	return wh[i].count > wh[j].count
+	return wh[i].count < wh[j].count
 }
 
 func (wh WordHeap) Swap(i, j int) {
@@ -32,10 +32,14 @@ func (wh *WordHeap) Push(x any) {
 
 func (wh *WordHeap) Pop() any {
 	old := *wh
-	n := len(old)
+	n := old.Len()
 	item := old[n-1]
 	*wh = old[0 : n-1]
 	return item
+}
+
+func (wh *WordHeap) Peek() any {
+	return (*wh)[wh.Len()-1]
 }
 
 func topKFrequent(words []string, k int) []string {
@@ -45,21 +49,22 @@ func topKFrequent(words []string, k int) []string {
 	}
 
 	wordHeap := WordHeap{}
-	for w, count := range wordCountMap {
-		wordItem := word{
-			word:  w,
-			count: count,
-		}
-
-		wordHeap = append(wordHeap, wordItem)
-	}
-
 	heap.Init(&wordHeap)
 
-	var res []string
-	for k > 0 {
-		res = append(res, heap.Pop(&wordHeap).(word).word)
-		k--
+	for w, count := range wordCountMap {
+		heap.Push(&wordHeap, word{
+			word:  w,
+			count: count,
+		})
+
+		if wordHeap.Len() > k {
+			heap.Pop(&wordHeap)
+		}
+	}
+
+	res := make([]string, k)
+	for i := k - 1; i >= 0; i-- {
+		res[i] = heap.Pop(&wordHeap).(word).word
 	}
 
 	return res
