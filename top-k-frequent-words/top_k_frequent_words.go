@@ -45,10 +45,10 @@ func topKFrequent(words []string, k int) []string {
 	}
 
 	wordHeap := WordHeap{}
-	for k, v := range wordCountMap {
+	for w, count := range wordCountMap {
 		wordItem := word{
-			word:  k,
-			count: v,
+			word:  w,
+			count: count,
 		}
 
 		wordHeap = append(wordHeap, wordItem)
