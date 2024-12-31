@@ -23,8 +23,20 @@ func Test_decodeString(t *testing.T) {
 			output: "abccdcdcdxyz",
 		},
 		{
-			s:      "100[leetcode]",
-			output: "leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode",
+			s: "100[leetcode]",
+			output: "leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcodeleetcode" +
+				"leetcodeleetcodeleetcodeleetcodeleetcode",
 		},
 	}
 
