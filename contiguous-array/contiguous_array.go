@@ -1,5 +1,25 @@
 package contiguous_array
 
+func findMaxLengthBrute(nums []int) int {
+	var count int
+	for idx := range nums {
+		var zeros, ones int
+		for j := idx; j < len(nums); j++ {
+			if nums[j] == 0 {
+				zeros++
+			} else {
+				ones++
+			}
+
+			if zeros == ones {
+				count = max(count, j+1-idx)
+			}
+		}
+	}
+
+	return count
+}
+
 func findMaxLength(nums []int) int {
 	var ans, count int
 	seen := make(map[int]int)

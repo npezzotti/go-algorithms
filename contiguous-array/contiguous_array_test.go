@@ -22,8 +22,16 @@ func Test_findMaxLength(t *testing.T) {
 	}
 
 	for _, tt := range tcases {
-		if output := findMaxLength(tt.nums); output != tt.output {
-			t.Errorf("got %v, expected %v", output, tt.output)
-		}
+		t.Run("findMaxLengthBrute", func(t *testing.T) {
+			if output := findMaxLengthBrute(tt.nums); output != tt.output {
+				t.Errorf("got %v, expected %v", output, tt.output)
+			}
+		})
+
+		t.Run("findMaxLength", func(t *testing.T) {
+			if output := findMaxLength(tt.nums); output != tt.output {
+				t.Errorf("got %v, expected %v", output, tt.output)
+			}
+		})
 	}
 }
