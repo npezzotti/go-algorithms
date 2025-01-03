@@ -29,6 +29,12 @@ func Test_findClosestElements(t *testing.T) {
 			x:      1,
 			output: []int{1},
 		},
+		{
+			arr:    []int{1, 1, 1, 10, 10, 10},
+			k:      1,
+			x:      9,
+			output: []int{10},
+		},
 	}
 
 	for _, tt := range tcases {
