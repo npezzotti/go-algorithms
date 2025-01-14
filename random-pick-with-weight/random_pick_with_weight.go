@@ -39,5 +39,5 @@ func (this *Solution) PickIndex() int {
 		}
 	}
 
-	return l-1
+	return l - 1
 }
