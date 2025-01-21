@@ -37,12 +37,16 @@ func Test_searchMatrix(t *testing.T) {
 			output: false,
 		},
 		{
-			matrix: [][]int{{1},{3},{5}},
+			matrix: [][]int{{1}, {3}, {5}},
 			target: 3,
 			output: true,
 		},
 		{
-			matrix: [][]int{{1,3,5,7},{10,11,16,20},{23,30,34,50}},
+			matrix: [][]int{
+				{1, 3, 5, 7},
+				{10, 11, 16, 20},
+				{23, 30, 34, 50},
+			},
 			target: 11,
 			output: true,
 		},
