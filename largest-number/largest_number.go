@@ -24,7 +24,6 @@ func largestNumber(nums []int) string {
 
 	var res string
 	for _, num := range nums {
-
 		res += strconv.Itoa(num)
 	}
 
