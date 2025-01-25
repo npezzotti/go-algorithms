@@ -19,7 +19,7 @@ func Test_reverse(t *testing.T) {
 			output: 21,
 		},
 		{
-			input:  1534236469,
+			input:  1563847412,
 			output: 0,
 		},
 	}
