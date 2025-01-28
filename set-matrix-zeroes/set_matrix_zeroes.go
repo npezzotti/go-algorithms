@@ -34,11 +34,10 @@ func setZeroes(matrix [][]int) {
 		}
 	}
 
-
 	if i0 {
 		matrix[0] = make([]int, len(matrix[0]))
 	}
-	
+
 	if j0 {
 		for i := range matrix {
 			matrix[i][0] = 0
