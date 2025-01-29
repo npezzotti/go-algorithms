@@ -9,18 +9,15 @@ func reorderList(head *utils.ListNode) {
 		return
 	}
 
-	slow, fast, sep := head, head, head
-
+	slow, fast := head, head
 	for fast != nil && fast.Next != nil {
-		sep = slow
 		slow = slow.Next
 		fast = fast.Next.Next
 	}
 
-	sep.Next = nil
-
 	var prev, cur, next *utils.ListNode
-	cur = slow
+	cur = slow.Next
+	slow.Next = nil
 
 	for cur != nil {
 		next = cur.Next
@@ -29,30 +26,14 @@ func reorderList(head *utils.ListNode) {
 		cur = next
 	}
 
-	list1 := head
-	list2 := prev
-
-	var flip bool
-	var d = new(utils.ListNode)
-	for list1 != nil && list2 != nil {
-		if flip {
-			d.Next = list2
-			list2 = list2.Next
-			flip = false
-		} else {
-			d.Next = list1
-			list1 = list1.Next
-			flip = true
-		}
-
-		d = d.Next
+	firstHalf := head
+	secondHalf := prev
+	for secondHalf != nil {
+		temp1 := firstHalf.Next
+		temp2 := secondHalf.Next
+		firstHalf.Next = secondHalf
+		secondHalf.Next = temp1
+		firstHalf = temp1
+		secondHalf = temp2
 	}
-
-	if list1 != nil {
-		d.Next = list1
-	} else {
-		d.Next = list2
-	}
-
-	d = nil
 }
