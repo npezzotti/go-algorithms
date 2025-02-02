@@ -34,6 +34,14 @@ func Test_findCheapestPrice(t *testing.T) {
 			k:       0,
 			output:  500,
 		},
+		{
+			n:       3,
+			flights: [][]int{{0, 1, 200}, {1, 0, 100}, {2, 1, 500}},
+			src:     0,
+			dst:     2,
+			k:       0,
+			output:  -1,
+		},
 	}
 
 	for _, tt := range tcases {
