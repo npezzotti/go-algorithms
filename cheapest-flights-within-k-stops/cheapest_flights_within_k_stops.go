@@ -1,7 +1,6 @@
 package cheapest_flights_within_k_stops_test
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -11,7 +10,6 @@ func findCheapestPrice(n int, flights [][]int, src int, dst int, k int) int {
 		distances[i] = math.MaxInt32
 	}
 
-	fmt.Println(distances)
 	distances[src] = 0
 
 	for i := 0; i < k+1; i++ {
