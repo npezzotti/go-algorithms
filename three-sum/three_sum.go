@@ -20,9 +20,9 @@ func threeSum(nums []int) [][]int {
 			sum := nums[idx1] + nums[idx2] + nums[idx3]
 			if sum == 0 {
 				res = append(res, []int{nums[idx1], nums[idx2], nums[idx3]})
-				idx3--
 
-				for idx3 > idx2 && nums[idx3] == nums[idx3+1] {
+				tmpIdx3 := nums[idx3]
+				for idx3 > idx2 && nums[idx3] == tmpIdx3 {
 					idx3--
 				}
 			} else if sum > 0 {
